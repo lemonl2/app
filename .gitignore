@@ -1,0 +1,6 @@
+/node_modules
+/dist
+/OME
+/.idea
+yarn
+yarn*

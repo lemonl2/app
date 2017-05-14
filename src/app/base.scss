@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 0;
+  min-height: 0;
+  flex-shrink: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Pingfang SC", "Segoe UI", "Helvetica Neue", Verdana, Arial, STHeiti, "Microsoft Yahei", sans-serif;
+  overflow: hidden;
+}
+
+.font-mono {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+}
+
+main-container {
+  flex: 1;
+  display: flex;
+}
+
+right-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #F6F5F4;
+}
+
+ui-view {
+  flex: 1;
+  overflow-x: hidden;
+  padding: 0 16px;
+}
+
+html.embed {
+  &, body {
+    height: initial;
+  }
+
+  body {
+    min-height: 100%;
+    overflow: initial;
+  }
+
+  ui-view {
+    overflow: auto;
+  }
+}
+
+html:not(.embed) #loading-bar {
+  $loading-bar-bg: #00C2B1;
+
+  .bar {
+    background: $loading-bar-bg;
+  }
+
+  .peg {
+    box-shadow: $loading-bar-bg 1px 0 6px 1px;
+  }
+
+  &-spinner .spinner-icon {
+    border-top-color: $loading-bar-bg;
+    border-left-color: $loading-bar-bg;
+  }
+}

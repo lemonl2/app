@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta name="description" content="这是一个公共的前端架构" charset="utf-8"/>
+  <title>前端架构</title>
+  <link ref="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+  <base href="/" />
+</head>
+<body ng-controller="RootController as $ctrl" ng-attr-data-page="{{$ctrl.$state.current.name}}">
+  <main-container>
+    <right-view>
+      <ui-view>hello world!</ui-view>
+    </right-view>
+  </main-container>
+</body>
+</html>
