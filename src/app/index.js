@@ -11,10 +11,12 @@ import 'angular-ui-bootstrap/dist/ui-bootstrap-csp.css';
 import angularLoadingBar from 'angular-loading-bar';
 import 'angular-loading-bar/build/loading-bar.css';
 
+import './bootstrap';
+
 import './base.scss';
 import './Dosis.scss';
 //import 'Images/favicon.ico';
-
+import moment from 'moment';
 moment.locale('zh-cn');
 
 export default angular.module('app', [

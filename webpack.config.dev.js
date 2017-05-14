@@ -29,6 +29,7 @@ module.exports = {
       'angular-loading-bar',
       'lodash',
       'blueimp-md5',
+      'moment',
     ],
     bundle: './src/index.js'
   },

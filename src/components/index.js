@@ -1,0 +1,2 @@
+import './chrome';
+import './pages';

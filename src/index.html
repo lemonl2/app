@@ -8,8 +8,10 @@
 </head>
 <body ng-controller="RootController as $ctrl" ng-attr-data-page="{{$ctrl.$state.current.name}}">
   <main-container>
+    <left-aside ng-cloak></left-aside>
     <right-view>
-      <ui-view>hello world!</ui-view>
+      <right-header></right-header>
+      <ui-view></ui-view>
     </right-view>
   </main-container>
 </body>
