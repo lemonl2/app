@@ -1,8 +1,8 @@
 import app from 'App';
 import './index.scss';
 class HomeOneController {
-  construtor() {
-
+  constructor() {
+    this.app = 'Hello World!';
   }
 }
 

@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.3",
-    "Polymer": "^1.6.1--",
+    "Polymer": "^1.6.2",
     "angular": "^1.6.4",
     "angular-animate": "^1.6.4",
     "angular-deferred-bootstrap": "^0.1.9",
@@ -24,6 +24,7 @@
     "chunk-manifest-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^0.4.0",
     "css-loader": "^0.28.1",
+    "e-timeline": "^1.0.0",
     "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
