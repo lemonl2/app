@@ -1,0 +1,54 @@
+<header class="report-config" ng-if="$ctrl.edit"
+        ng-class="{'always-show': $ctrl.config.reportBasicConfig || $ctrl.config.chartSelector || $ctrl.config.chartFormatConfig}">
+  <report-basic-config x-report="$ctrl.report"
+                       chart-change="$ctrl.chartChange('data')"
+                       popover-is-open="$ctrl.config.reportBasicConfig"
+                       popover-placement="{{$ctrl.popoverPlacement}}"></report-basic-config>
+  <chart-selector ng-if="$ctrl.report.searchType === 'aggregation' && $ctrl.report.content.includes('chart')" x-chart="$ctrl.report.option"
+                  chart-change="$ctrl.chartChange('data')"
+                  popover-is-open="$ctrl.config.chartSelector"
+                  popover-placement="{{$ctrl.popoverPlacement}}"></chart-selector>
+  <chart-format-config ng-if="$ctrl.report.searchType === 'aggregation' && $ctrl.report.content.includes('chart')" x-chart="$ctrl.report.option"
+                       option-change="$ctrl.chartChange('option')"
+                       popover-is-open="$ctrl.config.chartFormatConfig"
+                       popover-placement="{{$ctrl.popoverPlacement}}"></chart-format-config>
+  <ng-transclude></ng-transclude>
+</header>
+
+<div ng-if="$ctrl.report.searchType === 'aggregation'" class="chart-part">
+  <div resizable="{{$ctrl.allowResizable}}" r-directions="['bottom']"
+       r-grabber="<span title='上下拖拽缩放'></span>"
+       ng-if="$ctrl.report.content.includes('chart')"
+       ng-switch="$ctrl.report.option.name"
+       class="chart-wrap">
+    <bar-chart class="chart" ng-switch-when="bar" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></bar-chart>
+    <line-chart class="chart" ng-switch-when="line" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></line-chart>
+    <pie-chart class="chart" ng-switch-when="pie" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></pie-chart>
+    <area-chart class="chart" ng-switch-when="area" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.chart.theme" x-conditions="$ctrl.conditions"></area-chart>
+    <scatter-chart class="chart" ng-switch-when="scatter" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.option.option.theme" x-conditions="$ctrl.conditions"></scatter-chart>
+    <metric-chart class="chart" ng-switch-when="metric" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></metric-chart>
+    <gauge-chart class="chart" ng-switch-when="gauge" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></gauge-chart>
+    <radar-chart class="chart" ng-switch-when="radar" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></radar-chart>
+    <multipleyaxes-chart class="chart" ng-switch-when="multipleYAxes" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></multipleyaxes-chart>
+    <regression-chart class="chart" ng-switch-when="regression" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></regression-chart>
+    <funnel-chart class="chart" ng-switch-when="funnel" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></funnel-chart>
+    <calendar-chart class="chart" ng-switch-when="calendar" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></calendar-chart>
+    <map-chart class="chart" ng-switch-when="map" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></map-chart>
+    <bubble-chart class="chart" ng-switch-when="bubble" x-spl="$ctrl.report.spl" x-timefilter="$ctrl.timefilter" x-option="$ctrl.report.option.option" x-theme="$ctrl.report.option.theme" x-conditions="$ctrl.conditions"></bubble-chart>
+  </div>
+  <hr ng-if="$ctrl.report.content.includes('-')" />
+  <div ng-if="$ctrl.report.content.includes('table')" class="chart-wrap">
+    <search-aggregations x-spl="$ctrl.report.spl"
+                         x-timefilter="$ctrl.timefilter"
+                         x-conditions="$ctrl.conditions"
+                         class="aggregation"></search-aggregations>
+  </div>
+</div>
+<div ng-if="$ctrl.report.searchType === 'event'" class="event-part">
+  <event-record-list x-fields="$ctrl.report.option.fields"
+                     x-spl="$ctrl.report.spl"
+                     x-timefilter="$ctrl.timefilter"
+                     x-conditions="$ctrl.conditions"
+                     display-type="$ctrl.report.option.displayType"></event-record-list>
+</div>
+<div ng-if="::!['aggregation', 'event'].includes($ctrl.report.searchType)">不支持的搜索类型</div>

@@ -1,0 +1,9 @@
+<section ng-if="!$ctrl.remindfulType" class="chart-item" ng-repeat="series in $ctrl.series">
+  <div ng-style="{ 'font-size': $ctrl.option.fontSize + 'px', color: $ctrl.option.color }"
+       ng-class="{reverse: $ctrl.option.unitPosition === 'before'}" class="chart-item-value">
+    <span ng-bind="series.value | number: $ctrl.option.numberPrecision"></span><!--
+ --><span class="chart-item-value-unit" ng-bind="$ctrl.option.unit" ng-show="$ctrl.option.unit"></span>
+  </div>
+  <header ng-show="$ctrl.option.showTitle" class="chart-item-title font-mono" ng-bind="series.title"></header>
+</section>
+<reminder ng-if="$ctrl.remindfulType" x-type="$ctrl.remindfulType"></reminder>

@@ -1,0 +1,25 @@
+monitor {
+  header {
+    margin: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+
+    .app-selector {
+      width: 150px;
+    }
+  }
+
+  .active {
+    .nav-link {
+      color: #00A5D5 !important;
+    }
+  }
+
+  .fa {
+    margin-right: 5px;
+  }
+
+  .tabs {
+    margin: 10px 0;
+  }
+}

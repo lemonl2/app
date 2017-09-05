@@ -1,0 +1,28 @@
+metric-chart {
+  display: flex;
+  align-items: center;
+
+  .chart-item {
+    flex: 1;
+    text-align: center;
+
+    &-value {
+      font: bold 66px "Dosis";
+
+      &.reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+
+        .chart-item-value-unit {
+          margin-left: 0;
+          margin-right: .2em;
+        }
+      }
+
+      &-unit {
+        margin-left: .2em;
+      }
+    }
+  }
+}

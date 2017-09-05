@@ -1,5 +1,5 @@
-import angular from 'angular';
 import 'font-awesome/scss/font-awesome.scss';
+import angular from 'angular';
 import ngAnimate from 'angular-animate';
 import 'angular-i18n/zh-cn';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,13 +15,27 @@ import './bootstrap';
 
 import './base.scss';
 import './Dosis.scss';
-//import 'Images/favicon.ico';
+import './global.scss';
+
 import moment from 'moment';
 moment.locale('zh-cn');
+
+import 'echarts';
+
+import 'angular-resizable';
+import 'angular-resizable/src/angular-resizable.css';
+
+// import 'Images/favicon.ico';
+
+import 'angular-gridster';
+import 'angular-gridster/dist/angular-gridster.css';
+
 
 export default angular.module('app', [
   ngAnimate,
   uiRouter,
   uiBootstrap,
   angularLoadingBar,
+  'gridster',
+  'angularResizable',
 ]);

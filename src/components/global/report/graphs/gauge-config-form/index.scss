@@ -1,0 +1,31 @@
+gauge-config-form {
+  display: block;
+  width: 400px;
+
+  .zone {
+    margin: 7px 10px 0;
+  }
+
+  .color-zone {
+    .option-button {
+      span {
+        width: 20px;
+      }
+
+      .color-value, .value {
+        width: 70px;
+        text-align: center;
+      }
+
+      .value {
+        margin-right: 0;
+      }
+
+      .color {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

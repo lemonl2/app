@@ -1,0 +1,33 @@
+dashboard-panel {
+  display: block;
+  height: 100%;
+
+  .report-config {
+    padding: 4px;
+    margin: 0;
+    position: absolute;
+    z-index: 1200;
+    left: auto;
+    top: -38px;
+    right: 24px;
+  }
+
+  .fa-trash-o:hover {
+    color: red;
+  }
+
+  .chart-part {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .chart-wrap {
+      flex: 1;
+    }
+  }
+
+  .event-part {
+    height: 100%;
+    overflow: auto;
+  }
+}

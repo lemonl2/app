@@ -6,4 +6,7 @@ deferredBootstrapper.bootstrap({
   bootstrapConfig: {
     strictDi: true
   },
+  resolve: {
+    // INIT_CONFIGS: ['$http', initConfigs],
+  }
 });

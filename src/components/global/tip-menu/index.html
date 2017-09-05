@@ -1,0 +1,7 @@
+<main>
+  <ul ng-show="$ctrl.isShow" ng-mouseover="$ctrl.isShow = true" ng-mouseleave="$ctrl.isShow = false">
+    <li ng-repeat="item in $ctrl.titles track by item.title">
+      <a ng-bind="item.title"></a>
+    </li>
+  </ul>
+</main>

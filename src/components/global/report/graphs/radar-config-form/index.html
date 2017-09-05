@@ -1,0 +1,154 @@
+<uib-tabset class="chart-config-form" vertical="true" type="pills">
+  <uib-tab index="0" heading="常规">
+    <ul>
+      <li class="option-button">
+        <span>钻取</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.silent" uib-btn-radio="false">是</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.silent" uib-btn-radio="true">否</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>绘制类型</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$radar.shape" uib-btn-radio="'circle'">圆形</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$radar.shape" uib-btn-radio="'polygon'">多边形</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>标签显示</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.label.normal.show" uib-btn-radio="true">开</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.label.normal.show" uib-btn-radio="false">关</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$series.label.normal.show">
+        <span>标签位置</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.label.normal.position"
+                 uib-btn-radio="'outside'">外部</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.label.normal.position"
+                 uib-btn-radio="'inside'">内部</label>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="1" heading="指示器">
+    <ul>
+      <li class="option-button">
+        <span>最大值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$radar.max" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+      <li class="option-button">
+        <span>最小值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$radar.min" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="2" heading="图例">
+    <ul>
+      <li class="option-button">
+        <span>显示图例</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.show" uib-btn-radio="true">开</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.show" uib-btn-radio="false">关</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例位置</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.position" uib-btn-radio="'top'">上</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.position" uib-btn-radio="'right'">右</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.position" uib-btn-radio="'bottom'">下</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.position" uib-btn-radio="'left'">左</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>显示风格</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.type" uib-btn-radio="'plain'">平铺</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.type" uib-btn-radio="'scroll'">分页</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例轴距</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.gap" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>字体大小</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.textStyle.fontSize"
+            min="12" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例截断</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.truncation" uib-btn-radio="'none'">无</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.truncation" uib-btn-radio="'right'">A...</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.truncation" uib-btn-radio="'center'">A...Z</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.truncation" uib-btn-radio="'left'">...Z</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例项间距</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.itemGap"
+            min="10" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例项高度</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.itemHeight"
+            min="0" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <span>图例项宽度</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.itemWidth"
+            min="0" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }" />
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="3" heading="主题">
+    <ul>
+      <li class="option-button">
+        <span>主题</span>
+        <div class="btn-group">
+          <select class="form-control" ng-options="item.value as item.label for item in $ctrl.themes" ng-change="$ctrl.optionChange()"
+                  ng-model="$ctrl.chart.theme"></select>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+</uib-tabset>

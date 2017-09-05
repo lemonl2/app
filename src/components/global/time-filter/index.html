@@ -1,0 +1,90 @@
+<div>
+  <div class="timefilter-button-group">
+    <a class="timefilter-button" ng-show="$ctrl.isDropdownOpen || $ctrl.refreshDuration" ng-click="$ctrl.setRefresh(null)">
+       <i class="fa" ng-class="$ctrl.refreshDuration ? 'fa-play' : 'fa-pause'"></i>
+       <span ng-bind="$ctrl.refreshDuration | duration"></span>
+    </a>
+    <a class="timefilter-button"
+       uib-popover-template="::'timefilterTemplate'"
+       popover-title="时间选择器"
+       popover-trigger="'outsideClick'"
+       popover-placement="bottom-right"
+       popover-is-open="$ctrl.isDropdownOpen">
+      <i class="fa fa-clock-o"></i>
+      <span ng-if="['fast', 'relative'].includes($ctrl.display.type)" ng-bind="$ctrl.display.value | timefilterDuration"></span>
+      <span ng-if="$ctrl.display.type === 'absolute'" ng-bind-template="{{$ctrl.display.start | smartDate}} 至 {{$ctrl.display.end | smartDate}}"></span>
+    </a>
+    <ng-transclude></ng-transclude>
+  </div>
+</div>
+<script type="text/ng-template" id="timefilterTemplate">
+<div class="box-tab left">
+  <uib-tabset class="timefilter-tabset" active="$ctrl.activeTab" type="pills" vertical="true">
+    <uib-tab heading="快速" index="::'fast'">
+      <div class="pane-fast">
+        <section>
+          <header>相对</header>
+          <ul>
+            <li ng-class="{active: $ctrl.display.value === t}" ng-repeat="t in ::$ctrl.relativeTimes">
+              <a class="pointer" ng-bind="::t | timefilterDuration" ng-click="$ctrl.setRelative(t)"></a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <header>实时</header>
+          <ul style="margin-bottom: 0">
+            <li ng-class="{active: $ctrl.refreshDuration == null}">
+              <a class="pointer" ng-click="$ctrl.setRefresh(null)">关闭实时</a>
+            </li>
+          </ul>
+          <ul>
+            <li ng-class="{active: $ctrl.refreshDuration === t}" ng-repeat="t in ::$ctrl.realTimes">
+              <a class="pointer" ng-bind="::t | duration" ng-click="$ctrl.setRefresh(t)"></a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </uib-tab>
+    <uib-tab heading="相对" index="::'relative'" select="$ctrl.initRelative()">
+      <div class="pane-relative">
+        <section>
+          <heading>从：{{$ctrl.now - $ctrl.display.moment | date: 'yyyy-MM-dd HH:mm:ss'}}</heading>
+          <div class="input-group use-flex dropdown" uib-dropdown>
+            <input type="number" class="form-control" ng-model="$ctrl.relativeValue" ng-change="$ctrl.setRelative(($ctrl.relativeValue ? $ctrl.relativeValue : $ctrl.defaultValue) + $ctrl.display.unit)" />
+            <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu">
+              <li role="menuitem" ng-class="{active: $ctrl.display.unit === unit}" ng-repeat="unit in ::$ctrl.availableUnits">
+                <a class="pointer" ng-click="$ctrl.setRelative($ctrl.relativeValue + unit)" ng-bind="(unit | timeUnit) + '前'"></a>
+              </li>
+            </ul>
+            <button class="input-group-addon" uib-dropdown-toggle><span ng-bind="$ctrl.display.unit | timeUnit"></span> <i class="fa fa-caret-down fa-icon-right"></i></button>
+          </div>
+        </section>
+        <section>
+          <heading>到：现在</heading>
+          <input type="datetime-local" class="form-control" ng-model="$ctrl.now" disabled />
+        </section>
+      </div>
+    </uib-tab>
+    <uib-tab heading="绝对" index="::'absolute'" select="$ctrl.initAbsolute()">
+      <div class="pane-absolute">
+        <section>
+          <header>从</header>
+          <input ng-change="$ctrl.setAbsolute()" type="datetime-local" ng-model="$ctrl.absoluteValue.from" class="form-control"
+                  ng-attr-max="{{$ctrl.absolute.to | date: 'yyyy-MM-dd HH:mm:ss'}}" />
+          <div ng-click="$event.stopPropagation()" ng-change="$ctrl.setAbsolute()"
+                uib-datepicker datepicker-options="{maxDate: $ctrl.absoluteValue.to}"
+                ng-model="$ctrl.absoluteValue.from" class="well well-sm" datepicker-options="options"></div>
+        </section>
+        <section>
+          <header>到 <button class="btn btn-xs btn-primary" ng-click="$ctrl.selectNow()" ng-disabled="$ctrl.from > $ctrl.now">选择当前时间</button></header>
+          <input ng-change="$ctrl.setAbsolute()" type="datetime-local" ng-model="$ctrl.absoluteValue.to" class="form-control"
+                  ng-attr-min="{{$ctrl.absoluteValue.from | date: 'yyyy-MM-dd HH:mm:ss'}}" />
+          <div ng-click="$event.stopPropagation()" ng-change="$ctrl.setAbsolute()"
+                uib-datepicker datepicker-options="{minDate: $ctrl.absoluteValue.from}"
+                ng-model="$ctrl.absoluteValue.to" class="well well-sm" datepicker-options="options"></div>
+        </section>
+      </div>
+    </uib-tab>
+  </uib-tabset>
+</div>
+</script>

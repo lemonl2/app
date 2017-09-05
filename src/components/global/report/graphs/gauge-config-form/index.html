@@ -1,0 +1,89 @@
+<uib-tabset class="chart-config-form" vertical="true" type="pills">
+   <uib-tab index="0" heading="颜色">
+    <ul>
+      <li class="option-button">
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.show" uib-btn-radio="false">自动</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$legend.show" uib-btn-radio="true">手动</label>
+        </div>
+      </li>
+      <li class="option-button" ng-if="$ctrl.chart.option.$legend.show">
+        <div class="zone">范围</div>
+        <ul class="color-zone">
+          <li class="option-button">
+            <span>从</span><input class="color-value" type="number" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                                  ng-model="$ctrl.chart.option.$series.min" /><span>至</span>
+            <input class="color-value form-control" type="number" min="{{$ctrl.chart.option.$series.min}}" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$value.v1" />
+            <input class="color" type="color" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$series.colors[0]" />
+          </li>
+          <li class="option-button">
+            <span>从</span><span class="value" ng-bind="$ctrl.chart.option.$value.v1"></span><span>至</span>
+            <input class="color-value form-control" type="number" min="{{$ctrl.chart.option.$value.v1}}" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$value.v2" />
+            <input class="color" type="color" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$series.colors[1]" />
+          </li>
+          <li class="option-button">
+            <span>从</span><span class="value" ng-bind="$ctrl.chart.option.$value.v2"></span><span>至</span>
+            <input class="color-value form-control" type="number" min="{{$ctrl.chart.option.$value.v2}}" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$series.max" />
+            <input class="color" type="color" ng-change="$ctrl.optionChange()" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 }}"
+                   ng-model="$ctrl.chart.option.$series.colors[2]" />
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="1" heading="数字格式">
+    <ul>
+      <li class="option-button">
+        <span>精度</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" min="0" max="5" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.numberPrecision" />
+        </div>
+      </li>
+      <li class="option-button">
+        <span>单位</span>
+        <div class="btn-group">
+          <input type="text" class="form-control" placeholder="可选" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.unit" />
+        </div>
+      </li>
+      <li class="option-button">
+        <span>字体大小</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" min="10" placeholder="可选" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.detail.textStyle.fontSize" />
+        </div>
+      </li>
+      <li class="option-button">
+        <span>最小值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.min" placeholder="可选" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }"/>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>最大值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.max" placeholder="可选" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }"/>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="2" heading="主题">
+    <ul>
+      <li class="option-button">
+        <span>主题</span>
+        <div class="btn-group">
+          <select class="form-control" ng-options="item.value as item.label for item in $ctrl.themes" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.theme"></select>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+</uib-tabset>

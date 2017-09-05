@@ -1,0 +1,2 @@
+<ng-echarts ng-if="$ctrl.reminderMessage === null" theme="$ctrl.theme" option="$ctrl.ecOption" on-click="$ctrl.drill($event)"></ng-echarts>
+<reminder ng-if="$ctrl.reminderMessage" x-type="$ctrl.reminderMessage"></reminder>

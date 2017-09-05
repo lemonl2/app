@@ -1,0 +1,21 @@
+<a uib-popover-template="'chartsOption.html'" class="btn-pill pointer"
+   popover-placement="{{$ctrl.popoverPlacement}}" popover-append-to-body="true"
+   popover-trigger="'outsideClick'" popover-is-open="$ctrl.popoverIsOpen">
+  <i class="fa fa-text-height"></i>
+  格式
+  <i class="fa fa-caret-down"></i>
+</a>
+<script type="text/ng-template" id="chartsOption.html">
+  <common-config-form ng-if="['bar', 'line', 'area', 'scatter'].includes($ctrl.chart.name)"
+                      x-chart="$ctrl.chart" option-change="$ctrl.optionChange({ $type: $type })"></common-config-form>
+  <gauge-config-form ng-if="$ctrl.chart.name === 'gauge'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></gauge-config-form>
+  <metric-config-form ng-if="$ctrl.chart.name === 'metric'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></metric-config-form>
+  <pie-config-form ng-if="$ctrl.chart.name === 'pie'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></pie-config-form>
+  <regression-config-form ng-if="$ctrl.chart.name === 'regression'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></regression-config-form>
+  <radar-config-form ng-if="$ctrl.chart.name === 'radar'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></radar-config-form>
+  <multipleYAxes-config-form ng-if="$ctrl.chart.name === 'multipleYAxes'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></multipleYAxes-config-form>
+  <funnel-config-form ng-if="$ctrl.chart.name === 'funnel'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></funnel-config-form>
+  <calendar-config-form ng-if="$ctrl.chart.name === 'calendar'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></calendar-config-form>
+  <map-config-form ng-if="$ctrl.chart.name === 'map'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></map-config-form>
+  <bubble-config-form ng-if="$ctrl.chart.name === 'bubble'" x-chart="$ctrl.chart" option-change="$ctrl.optionChange($type)"></bubble-config-form>
+</script>

@@ -1,0 +1,48 @@
+<main>
+  <header>
+    <select ng-model="$ctrl.app" class="form-control header-control app-selector"
+            ng-change="$ctrl.changeApp()" required>
+      <option value="" >选择应用</option>
+      <option value="192.168.31.1" >192.168.31.1</option>
+      <option value="192.168.31.2" >192.168.31.2</option>
+      <option value="192.168.31.3" >192.168.31.3</option>
+    </select>
+    <time-filter ng-model="$ctrl.timefilter" ng-change="$ctrl.refresh()" on-refresh="$ctrl.refresh()"></time-filter>
+  </header>
+  <time-spanner x-specified-time="$ctrl.selectedTime" x-time-extent="$ctrl.durationToCheck"
+  x-data="$ctrl.spannerData" ng-model="$ctrl.durationToView"></time-spanner>
+  <section class="tabs">
+    <uib-tabset active="0">
+      <uib-tab index="0">
+        <uib-tab-heading>
+          <i class="fa fa-exclamation-circle"></i>告警
+        </uib-tab-heading>
+        <metrics></metrics>
+      </uib-tab>
+      <uib-tab index="1">
+        <uib-tab-heading>
+          <i class="fa fa-bar-chart"></i>性能
+        </uib-tab-heading>
+        Short Labeled Justified content
+      </uib-tab>
+      <uib-tab index="2">
+        <uib-tab-heading>
+          <i class="fa fa-file"></i>日志
+        </uib-tab-heading>
+        Long Labeled Justified content
+      </uib-tab>
+      <uib-tab index="3">
+        <uib-tab-heading>
+          <i class="fa fa-sitemap"></i>流程
+        </uib-tab-heading>
+        Long Labeled Justified content
+      </uib-tab>
+      <uib-tab index="4">
+        <uib-tab-heading>
+          <i class="fa fa-cog"></i>配置
+        </uib-tab-heading>
+        Long Labeled Justified content
+      </uib-tab>
+    </uib-tabset>
+  </section>
+</main>

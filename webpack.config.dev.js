@@ -43,38 +43,42 @@ module.exports = {
       App: path.resolve(__dirname, 'src/app'),
       Images: path.resolve(__dirname, 'src/assets/images'),
       Fonts: path.resolve(__dirname, 'src/assets/fonts'),
+      Constant: path.resolve(__dirname, 'src/constant'),
+      Helpers: path.resolve(__dirname, 'src/helpers'),
     }
   },
   devtool: 'source-map',
   module: {
-    loaders: [
-      { test: /\.html$/, loader: 'html-loader'},
+    loaders: [{
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'file-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: cssLoaderOption
-            }
-          ]
+          use: [{
+            loader: 'css-loader',
+            options: cssLoaderOption
+          }]
         })
       }, {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'file-loader',
-          use: [
-            { loader: 'css-loader', options: cssLoaderOption },
+          use: [{
+              loader: 'css-loader',
+              options: cssLoaderOption
+            },
             'postcss-loader?sourcemap',
             'sass-loader?sourcemap'
           ]
         })
       }, {
         test(p) {
-          return !p.endsWith('fontawesome-webfont.svg')
-              && !p.endsWith('glyphicons-halflings-regular.svg')
-              && /\.(jpg|png|svg|gif)$/.test(p);
+          return !p.endsWith('fontawesome-webfont.svg') &&
+            !p.endsWith('glyphicons-halflings-regular.svg') &&
+            /\.(jpg|png|svg|gif)$/.test(p);
         },
         loader: 'file-loader?name=images/[name].[ext]'
       }, {
@@ -94,13 +98,26 @@ module.exports = {
       disabledDotRule: true
     },
     proxy: {
-      'api/url': {//todo
-        target: 'http:localhost:8888/api/url',
+      '/api/itoa': {
+        target: 'http://192.168.31.136:18899',
         logLevel: 'debug',
+        pathRewrite: {
+          '^/api': ''
+        },
         onProxyRes(proxyRes) {
           proxyRes.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
         }
-      }
+      },
+      '/api/spl': {
+        target: 'http://192.168.31.135:8899',
+        logLevel: 'debug',
+        pathRewrite: {
+          '^/api/spl': ''
+        },
+        onProxyRes(proxyRes) {
+          proxyRes.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+        }
+      },
     }
   },
   plugins: [

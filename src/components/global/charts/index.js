@@ -1,0 +1,16 @@
+import './component';
+import './bar';
+import './line';
+import './scatter';
+import './area';
+import './pie';
+import './gauge';
+import './metric';
+import './multipleYAxes';
+import './regression';
+import './radar';
+import './funnel';
+import './calendar';
+import './map';
+import './bubble';
+import './themes';

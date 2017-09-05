@@ -1,0 +1,24 @@
+chart-selector {
+  display: inline-block;
+
+  .btn-pill {
+    padding: 0 8px;
+  }
+
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
+
+  .small-icon {
+    width: 22px;
+    height: 20px;
+  }
+}
+
+.list-item-container {
+  width: 280px;
+  line-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

@@ -1,0 +1,26 @@
+line-chart {
+  display: block;
+  position: relative;
+
+  .adding-label {
+    cursor: text;
+
+    * {
+      pointer-events: none;
+      opacity: .8;
+    }
+  }
+
+  .text-label {
+    position: absolute;
+    width: fit-content;
+
+    &:focus {
+      background: white;
+    }
+
+    &:not(:focus) {
+      background: rgba(255, 255, 255, .5);
+    }
+  }
+}

@@ -8,9 +8,9 @@
 </head>
 <body ng-controller="RootController as $ctrl" ng-attr-data-page="{{$ctrl.$state.current.name}}">
   <main-container>
-    <left-aside ng-cloak></left-aside>
+    <right-header></right-header>
     <right-view>
-      <right-header></right-header>
+      <left-aside ng-cloak></left-aside>
       <ui-view></ui-view>
     </right-view>
   </main-container>

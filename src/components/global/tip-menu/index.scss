@@ -1,0 +1,24 @@
+tip-menu {
+  display: block;
+  height: 180px;
+
+  ul {
+    background: #243A49;
+    color: white;
+    width: 33px;
+
+    li {
+      border-bottom: 1px solid white;
+      padding: 2px;
+
+      &:hover {
+        background-color: #00A5D5;
+
+        a:hover {
+          color: white;
+          list-style: none;
+        }
+      }
+    }
+  }
+}

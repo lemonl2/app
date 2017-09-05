@@ -1,0 +1,10 @@
+<div gridster="$ctrl.gridsterOptions">
+  <ul>
+    <li gridster-item="item" ng-repeat="item in $ctrl.detail" ng-class="'chart-' + item.option.name">
+      <dashboard-panel x-widget="item" x-editing="$ctrl.editing"
+                       x-timefilter="$ctrl.timefilter"
+                       remove-widget="$ctrl.removeWidget(item)"
+                       all-inputs="$ctrl.allInputs"></dashboard-panel>
+    </li>
+  </ul>
+</div>

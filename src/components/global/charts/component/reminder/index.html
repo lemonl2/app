@@ -1,0 +1,9 @@
+<div class="info-vertical-middle">
+  <h2 class="text-center" ng-switch="$ctrl.type">
+    <p ng-switch-when="noData">对不起，没有结果。</p>
+    <p ng-switch-when="gt2D">对不起，目前只支持二维的分组查询。</p>
+    <p ng-switch-when="noMatch">对不起，不支持此图表类型。</p>
+    <p ng-switch-default ng-bind="$ctrl.type"></p>
+    <i aria-hidden="true" class="fa fa-meh-o"></i>
+  </h2>
+</div>

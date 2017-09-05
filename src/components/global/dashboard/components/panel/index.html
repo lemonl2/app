@@ -1,0 +1,13 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="text-ellipsis" ng-bind="$ctrl.widget.title"></h3>
+    <div class="box-header-btns" ng-if="$ctrl.editing">
+      <a title="移除" ng-click="$ctrl.removeWidget()"><i class="fa fa-trash-o"></i></a>
+    </div>
+  </div>
+  <div class="box-content">
+     <report-panel x-report="$ctrl.widget" x-timefilter="$ctrl.timefilter"
+                   popover-placement="bottom-right" allow-resizable="false"
+                   x-inputs="$ctrl.inputs"></report-panel>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<a uib-popover-template="'chartsTemplate.html'" class="btn-pill pointer"
+   popover-placement="{{$ctrl.popoverPlacement}}" popover-trigger="'outsideClick'"
+   popover-is-open="$ctrl.popoverIsOpen" popover-append-to-body="true">
+  <i class="fa fa-line-chart"></i>
+  <span ng-bind="$ctrl.chart.title"></span>
+  <i class="fa fa-caret-down"></i>
+</a>
+<script type="text/ng-template" id="chartsTemplate.html">
+  <header>选择图表</header>
+  <div class="list-item-container">
+    <a ng-repeat="chart in $ctrl.charts" uib-tooltip="{{chart.title}}" ng-click="$ctrl.clickChart(chart)">
+      <i class="chart-icon icon-{{chart.name}}"></i>
+    </a>
+    <span><i class="chart-icon"></i></span>
+    <span><i class="chart-icon"></i></span>
+  </div>
+</script>

@@ -1,0 +1,79 @@
+<uib-tabset class="chart-config-form" vertical="true" type="pills">
+  <uib-tab index="0" heading="常规">
+    <ul>
+      <li class="option-button">
+        <span>方位</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.orientChange()" ng-model="$ctrl.chart.option.$calendar.orient" uib-btn-radio="'vertical'">垂直</label>
+          <label class="btn btn-default" ng-change="$ctrl.orientChange()" ng-model="$ctrl.chart.option.$calendar.orient" uib-btn-radio="'horizontal'">水平</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>钻取</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.silent" uib-btn-radio="false">是</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$series.silent" uib-btn-radio="true">否</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>语言</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$language.nameMap" uib-btn-radio="'en'">英文</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$language.nameMap" uib-btn-radio="'cn'">中文</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>显示</span>
+        <div class="btn-group">
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$showAll" uib-btn-radio="true">整年</label>
+          <label class="btn btn-default" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$showAll" uib-btn-radio="false">部分</label>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>最小值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$visualMap.min" placeholder="可选" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }"/>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>最大值</span>
+        <div class="btn-group">
+          <input type="number" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$visualMap.max" placeholder="可选" ng-model-options="{
+            updateOn: 'default blur',
+            debounce: { 'default': 500, 'blur': 0 }
+          }"/>
+        </div>
+      </li>
+      <li class="option-button">
+        <span>日历框大小</span>
+        <div class="btn-group chart-gap">
+          <label>
+            宽：<input type="text" ng-pattern="/^([1-9]\d*|auto)$/" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$calendar.cellSize[0]" ng-model-options="{
+              updateOn: 'default blur',
+              debounce: { 'default': 500, 'blur': 0 }
+            }" placeholder="使用默认值"/>
+          </label>
+          <label>
+            高：<input type="text" ng-pattern="/^([1-9]\d*|auto)$/" class="form-control" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.option.$calendar.cellSize[1]" ng-model-options="{
+              updateOn: 'default blur',
+              debounce: { 'default': 500, 'blur': 0 }
+            }" placeholder="使用默认值"/>
+          </label>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+  <uib-tab index="4" heading="主题">
+    <ul>
+      <li class="option-button">
+        <span>主题</span>
+        <div class="btn-group">
+          <select class="form-control" ng-options="item.value as item.label for item in $ctrl.themes" ng-change="$ctrl.optionChange()" ng-model="$ctrl.chart.theme"></select>
+        </div>
+      </li>
+    </ul>
+  </uib-tab>
+</uib-tabset>

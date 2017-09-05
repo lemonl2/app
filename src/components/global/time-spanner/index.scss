@@ -1,0 +1,62 @@
+time-spanner {
+  display: block;
+
+  & > svg {
+    border: 1px #3fbeb4 solid;
+    box-shadow: 0 0 1px 1px #f0f0f0, 0 0 1px 1px #f0f0f0 inset;
+    width: 100%;
+  }
+
+  .specified-time-line {
+    pointer-events: none;
+  }
+
+  .brush {
+    .extent {
+      fill: #A7DEEE;
+      fill-opacity: .5;
+      shape-rendering: crispEdges;
+      stroke-width: 0;
+    }
+
+    .resize {
+      rect {
+        fill: #00C8C1;
+      }
+
+      line {
+        shape-rendering: crispEdges;
+        stroke-width: 1px;
+        stroke: white;
+      }
+
+      text {
+        font-size: .9em;
+        dominant-baseline: middle;
+        pointer-events: none;
+      }
+
+      &.w text {
+        transform: translate(12px, -.5em);
+      }
+
+      &.e text {
+        transform: translate(-74px, -.5em);
+      }
+    }
+
+    .brush .resize text .date {
+      font-size: .82em;
+    }
+
+    &.text-hidden {
+      .resize.w text {
+        transform: translate(-74px, -.5em);
+      }
+
+      .resize.e text {
+        transform: translate(12px, -.5em);
+      }
+    }
+  }
+}

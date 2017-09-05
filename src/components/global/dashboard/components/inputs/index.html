@@ -1,0 +1,37 @@
+<div gridster="$ctrl.gridsterOptions">
+  <ul>
+    <li gridster-item="item" ng-repeat="item in $ctrl.inputs" ng-class="::'input-' + item.type">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="text-ellipsis" ng-bind="item.normal.title"></h3>
+          <div class="box-header-btns" ng-if="$ctrl.editing">
+            <a title="编辑" ng-click="$ctrl.editInput(item, $index)"><i class="fa fa-edit"></i></a>
+            <a title="移除" ng-click="$ctrl.removeInput(item)"><i class="fa fa-trash-o"></i></a>
+          </div>
+        </div>
+        <form class="box-content" ng-switch="::item.type"
+              ng-submit="$ctrl.onSearch({$event: $event, $input: item, type: 'submit'})">
+          <input ng-switch-when="text" class="form-control" type="text" ng-model="item.value" />
+          <select ng-switch-when="select" class="form-control" ng-model="item.value">
+            <option value="">请选择</option>
+            <option ng-repeat="option in item.staticOptions.value.concat(item.dynamicOptions.value)"
+                    ng-value="option.value" ng-bind="option.label"></option>
+          </select>
+          <div class="xbox-list" ng-switch-when="checkbox" ng-style="{'column-count': item.normal.columnCount || 2}">
+            <label ng-repeat="option in item.staticOptions.value.concat(item.dynamicOptions.value)">
+              <input type="checkbox" ng-model="item.value[option.value]" />
+              <span ng-bind="option.label"></span>
+            </label>
+          </div>
+          <div class="xbox-list" ng-switch-when="radio" ng-style="{'column-count': item.normal.columnCount || 2}">
+            <label ng-repeat="option in item.staticOptions.value.concat(item.dynamicOptions.value)">
+              <input type="radio" ng-model="item.value" ng-value="option.value" />
+              <span ng-bind="option.label"></span>
+            </label>
+          </div>
+          <button class="btn btn-success" ng-switch-when="button" ng-bind="item.normal.label"></button>
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>

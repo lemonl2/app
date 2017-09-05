@@ -1,0 +1,61 @@
+chart-format-config {
+  display: inline-block;
+
+  .btn-pill {
+    padding: 0 8px;
+  }
+
+  &:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+
+.chart-config-form {
+  .option-button {
+    display: flex;
+    padding: 5px 0;
+
+    span {
+      width: 70px;
+      align-self: center;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    .btn-group {
+      flex: 1;
+      display: flex;
+      margin-left: 6px;
+
+      label {
+        flex: 1;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .chart-gap {
+      .form-control {
+        width: 75%;
+        display: inline-block;
+      }
+    }
+  }
+}
+.rotate-span {
+  display: inline-block;
+  width: 20px !important;
+  margin-right: 0 !important;
+  color: #333;
+}
+.rotate-btn {
+  margin-left: 0 !important;
+  border-right: 1px solid transparent !important;
+  border-radius: 0 !important;
+  &:hover,&.active {
+    border-color: rgba(0, 0, 0, .13) !important;
+  }
+  &:last-child {
+    border-right:1px solid rgba(0, 0, 0, .13) !important;
+  }
+}

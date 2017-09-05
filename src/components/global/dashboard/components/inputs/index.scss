@@ -1,0 +1,44 @@
+dashboard-inputs {
+  display: block;
+  background: white;
+  box-shadow: 0 2px 4px 0 rgba(black, 0.1);
+  padding: 12px;
+
+  .box {
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    box-shadow: none;
+  }
+
+  .box:not(.input-button) {
+    background: #F7F7F7;
+  }
+
+  .box-content {
+    overflow: hidden;
+  }
+
+  .input-radio, .input-checkbox {
+    .box-content {
+      padding: 0 12px;
+    }
+  }
+
+  .xbox-list {
+    height: 100%;
+
+    label {
+      display: block;
+    }
+  }
+
+  .input-button {
+    .box-content {
+      padding: 5px 12px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
