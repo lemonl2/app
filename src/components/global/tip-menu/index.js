@@ -13,7 +13,8 @@ TipMenuController.$inject = [];
 app.component('tipMenu', {
   template: require('./index.html'),
   bindings: {
-    titles: '<'
+    items: '<',
+    selectedItem: '=',
   },
   controller: TipMenuController,
 });

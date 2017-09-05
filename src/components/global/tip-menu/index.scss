@@ -1,11 +1,11 @@
 tip-menu {
   display: block;
   height: 180px;
+  width: 33px;
 
   ul {
     background: #243A49;
     color: white;
-    width: 33px;
 
     li {
       border-bottom: 1px solid white;
@@ -16,9 +16,13 @@ tip-menu {
 
         a:hover {
           color: white;
-          list-style: none;
+          text-decoration: none;
         }
       }
+    }
+    .actived {
+      color: white;
+      background-color: #00A5D5;
     }
   }
 }

@@ -1,3 +1,10 @@
-<main>
-  <tip-menu titles="$ctrl.titles"></tip-menu>
+<main class="container">
+  <tip-menu selected-item="$ctrl.selectedItem" x-items="$ctrl.items"></tip-menu>
+  <section ng-switch="$ctrl.selectedItem">
+    <metric-system ng-switch-when="system">system</metric-system>
+    <metric-db ng-switch-when="db">db</metric-db>
+    <metric-network ng-switch-when="network">network</metric-network>
+    <metric-middleware ng-switch-when="middleware">middleware</metric-middleware>
+    <metric-storage ng-switch-when="storage">storage</metric-storage>
+  </section>
 </main>

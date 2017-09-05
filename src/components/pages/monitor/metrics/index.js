@@ -1,12 +1,17 @@
 import app from 'App';
+
+import './index.scss';
+
 class MetricsController {
   constructor() {
-    this.titles = [
-      {title: '综合情况'},
-      {title: '系统'},
-      {title: '数据库'},
-      {title: '中间件'},
+    this.items = [
+      {title: '系统', name: 'system'},
+      {title: '数据库', name: 'db'},
+      {title: '中间件', name: 'middleware'},
+      {title: '网络', name: 'network'},
+      {title: '存储', name: 'storage'},
     ];
+    this.selectedItem = 'system';
   }
 }
 
