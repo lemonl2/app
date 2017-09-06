@@ -1,6 +1,7 @@
 import app from 'App';
 import { convertTimeBounds } from 'Helpers';
 import './metrics';
+import './setting';
 
 import './index.scss';
 

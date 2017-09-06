@@ -16,7 +16,7 @@ class TipMenuController {
 
   $onInit() {
     const { $scope, $timeout } = this.services;
-    this.container = document.getElementById('scroll-container');
+    this.container = document.getElementById(this.scrollContainer);
     this.toggleSectionActive = () => {
       const container = this.container;
       const anchors = Array.from(document.getElementsByClassName('inpage-anchor'));
@@ -43,6 +43,7 @@ app.component('tipMenu', {
   bindings: {
     items: '<',
     activeSection: '<',
+    scrollContainer: '@',
   },
   controller: TipMenuController,
 });
