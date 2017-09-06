@@ -1,10 +1,10 @@
-<main class="container">
-  <tip-menu selected-item="$ctrl.selectedItem" x-items="$ctrl.items"></tip-menu>
-  <section ng-switch="$ctrl.selectedItem">
-    <metric-system ng-switch-when="system">system</metric-system>
-    <metric-db ng-switch-when="db">db</metric-db>
-    <metric-network ng-switch-when="network">network</metric-network>
-    <metric-middleware ng-switch-when="middleware">middleware</metric-middleware>
-    <metric-storage ng-switch-when="storage">storage</metric-storage>
+<main class="tab-container" id="scroll-container">
+  <tip-menu active-section="$ctrl.activeSection" x-items="$ctrl.items"></tip-menu>
+  <section>
+    <metric-system id="metric-system" class="inpage-anchor">system</metric-system>
+    <metric-db id="metric-db" class="inpage-anchor">db</metric-db>
+    <metric-middleware id="metric-middleware" class="inpage-anchor">middleware</metric-middleware>
+    <metric-network id="metric-network" class="inpage-anchor">network</metric-network>
+    <metric-storage id="metric-storage" class="inpage-anchor">storage</metric-storage>
   </section>
 </main>

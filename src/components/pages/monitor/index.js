@@ -7,14 +7,15 @@ import './index.scss';
 class MonitorController {
   constructor($scope, $timeout) {
     this.services = { $scope, $timeout };
-    this.selectedTime = +new Date(new Date().setHours(0, 0, 0, 0));
+    this.selectedTime = new Date(new Date().setHours(0, 0, 0, 0));
     this.durationToCheck = [new Date().setFullYear(2010), +new Date()];
     this.timefilter = ['now-6M', 'now'];
   }
 
   refresh() {
     const timeBounds = convertTimeBounds(this.timefilter);
-    this.durationToView = [timeBounds.min, timeBounds.max];
+    this.durationToCheck = [timeBounds.min, timeBounds.max];
+    this.selectedTime = new Date((timeBounds.min + timeBounds.max) / 2);
   }
 
   $onInit() {
@@ -22,7 +23,6 @@ class MonitorController {
     $timeout(() => {
       this.refresh();
     });
-    // this.services.$scope.$on('monitor:timefilterChange', this.timefilter);
   }
 }
 

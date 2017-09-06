@@ -1,6 +1,8 @@
 <main>
-  <ul ng-mouseover="$ctrl.isShow = true" ng-mouseleave="$ctrl.isShow = false">
-    <li ng-repeat="item in $ctrl.items track by item.name" ng-class="{'actived': $ctrl.selectedItem === item.name}" ng-click="$ctrl.selectedItem = item.name">
+  <ul>
+    <li ng-repeat="item in $ctrl.items track by item.name"
+        ng-class="{'active': $ctrl.activeSection.name === item.name}"
+        ng-click="$ctrl.scrollTo(item.name);">
       <a ng-bind="item.title"></a>
     </li>
   </ul>

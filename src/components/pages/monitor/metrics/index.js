@@ -1,17 +1,21 @@
 import app from 'App';
+import './components';
 
 import './index.scss';
 
 class MetricsController {
   constructor() {
     this.items = [
-      {title: '系统', name: 'system'},
-      {title: '数据库', name: 'db'},
-      {title: '中间件', name: 'middleware'},
-      {title: '网络', name: 'network'},
-      {title: '存储', name: 'storage'},
+      {title: '系统', name: 'metric-system'},
+      {title: '数据库', name: 'metric-db'},
+      {title: '中间件', name: 'metric-middleware'},
+      {title: '网络', name: 'metric-network'},
+      {title: '存储', name: 'metric-storage'},
     ];
-    this.selectedItem = 'system';
+  }
+
+  $onInit() {
+    this.activeSection = { name: "metric-system" };
   }
 }
 

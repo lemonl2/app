@@ -1,4 +1,13 @@
 monitor {
+  display: block;
+  height: 100%;
+
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   header {
     margin: 20px 5px;
     display: flex;
@@ -10,8 +19,8 @@ monitor {
   }
 
   .active {
-    .nav-link {
-      color: #00A5D5 !important;
+    uib-tab-heading {
+      color: #00A5D5;
     }
   }
 
@@ -21,18 +30,36 @@ monitor {
 
   .tabs {
     margin: 10px 0;
+    flex: 1;
+    height: 100%;
+
+    >div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .tab-content {
+        flex: 1;
+
+        .tab-pane {
+          height: 100%;
+        }
+      }
+    }
   }
 
-  .container {
+  .tab-container {
     display: flex;
     margin-top: 10px;
+    overflow: scroll;
 
     tip-menu {
+      position: fixed
     }
 
-    section {
+    > section {
       flex: 1;
-      padding: 0 10px;
+      padding: 0 40px;
     }
   }
 }

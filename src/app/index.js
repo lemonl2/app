@@ -30,6 +30,8 @@ import 'angular-resizable/src/angular-resizable.css';
 import 'angular-gridster';
 import 'angular-gridster/dist/angular-gridster.css';
 
+import 'angular-scroll';
+require('smoothscroll-polyfill').polyfill();
 
 export default angular.module('app', [
   ngAnimate,
@@ -38,4 +40,5 @@ export default angular.module('app', [
   angularLoadingBar,
   'gridster',
   'angularResizable',
+  'duScroll',
 ]);
