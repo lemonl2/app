@@ -16,7 +16,7 @@
   </header>
   <div ng-cloak class="time-bar">
     <time-spanner ng-if="$ctrl.showTimeline" x-specified-time="$ctrl.selectedTime" x-time-extent="$ctrl.durationToCheck"
-    x-data="$ctrl.spannerData" ng-model="$ctrl.durationToView"></time-spanner>
+    x-data="$ctrl.spannerData" ng-model="$ctrl.durationToView" time-change="$ctrl.timeChange()"></time-spanner>
   </div>
   <section class="tabs">
     <uib-tabset active="0">

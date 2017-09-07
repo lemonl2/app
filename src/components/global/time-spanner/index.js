@@ -138,6 +138,7 @@ class TimeSpannerController {
           extent = x.domain();
         }
         this.ngModel.$setViewValue(extent);
+        this.timeChange();
       }
     });
 
@@ -162,6 +163,7 @@ app.component('timeSpanner', {
     data: '<',
     timeExtent: '<',
     specifiedTime: '<',
+    timeChange: '&',
   },
   require: {
     ngModel: '?ngModel'

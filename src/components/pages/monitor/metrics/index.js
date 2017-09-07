@@ -4,7 +4,7 @@ import './components';
 import './index.scss';
 
 class MetricsController {
-  constructor() {
+  constructor($scope, $timeout) {
     this.items = [
       {title: '系统', name: 'metric-system'},
       {title: '数据库', name: 'metric-db'},
@@ -13,13 +13,16 @@ class MetricsController {
       {title: '存储', name: 'metric-storage'},
     ];
     this.activeSection = { name: "metric-system" };
+
+    this.services = {$scope, $timeout};
   }
 
   $onInit() {
+
   }
 }
 
-MetricsController.$inject = [];
+MetricsController.$inject = ['$scope', '$timeout'];
 
 app.component('metrics', {
   template: require('./index.html'),
