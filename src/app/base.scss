@@ -43,20 +43,20 @@ ui-view {
   padding: 0 16px;
 }
 
-html.embed {
-  &, body {
-    height: initial;
-  }
+// html.embed {
+//   &, body {
+//     height: initial;
+//   }
 
-  body {
-    min-height: 100%;
-    overflow: initial;
-  }
+//   body {
+//     min-height: 100%;
+//     overflow: initial;
+//   }
 
-  ui-view {
-    overflow: auto;
-  }
-}
+//   ui-view {
+//     overflow: auto;
+//   }
+// }
 
 html:not(.embed) #loading-bar {
   $loading-bar-bg: #00C2B1;
