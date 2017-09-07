@@ -1,4 +1,5 @@
 import app from 'App';
+import ResizeObserver from 'resize-observer-polyfill';
 import { convertTimeBounds } from 'Helpers';
 import './metrics';
 import './setting';
@@ -34,6 +35,13 @@ class MonitorController {
   $onInit() {
     const { $timeout, $scope } = this.services;
     this.refresh();
+
+    const ro = new ResizeObserver(([ entry ]) => {
+      this.showTimeline = false;
+      $timeout(()=> { this.showTimeline = true;}, 300);
+    });
+    const timer = document.querySelector('#time-bar');
+    ro.observe(timer);
   }
 }
 
