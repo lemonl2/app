@@ -23,5 +23,9 @@ MetricsController.$inject = [];
 
 app.component('metrics', {
   template: require('./index.html'),
+  bindings: {
+    timefilter: '<',
+    edit: '<',
+  },
   controller: MetricsController
 });

@@ -1,5 +1,5 @@
 <main>
-  <header>
+  <header class="time-header">
     <select ng-model="$ctrl.app" class="form-control header-control app-selector"
             ng-change="$ctrl.changeApp()" required>
       <option value="" >选择应用</option>
@@ -7,10 +7,17 @@
       <option value="192.168.31.2" >192.168.31.2</option>
       <option value="192.168.31.3" >192.168.31.3</option>
     </select>
-    <time-filter ng-model="$ctrl.timefilter" ng-change="$ctrl.refresh()" on-refresh="$ctrl.refresh()"></time-filter>
+    <time-filter ng-model="$ctrl.timefilter" ng-change="$ctrl.refresh()" on-refresh="$ctrl.refresh()">
+      <a ng-if="!$root.embed" class="timefilter-button" target="_blank"
+          title="打开新窗口" ui-sref="monitor({ edit: 0, embed: true })">
+        <i class="fa fa-external-link" aria-hidden="true"></i> 打开新窗口
+      </a>
+    </time-filter>
   </header>
-  <time-spanner x-specified-time="$ctrl.selectedTime" x-time-extent="$ctrl.durationToCheck"
-  x-data="$ctrl.spannerData" ng-model="$ctrl.durationToView"></time-spanner>
+  <div ng-cloak class="time-bar">
+    <time-spanner ng-if="$ctrl.showTimeline" x-specified-time="$ctrl.selectedTime" x-time-extent="$ctrl.durationToCheck"
+    x-data="$ctrl.spannerData" ng-model="$ctrl.durationToView"></time-spanner>
+  </div>
   <section class="tabs">
     <uib-tabset active="0">
       <uib-tab index="0">
@@ -18,7 +25,7 @@
       </uib-tab>
       <uib-tab index="1">
         <uib-tab-heading><i class="fa fa-bar-chart"></i>性能</uib-tab-heading>
-        <metrics></metrics>
+        <metrics x-timefilter="$ctrl.durationToView" x-edit="$ctrl.edit"></metrics>
       </uib-tab>
       <uib-tab index="2">
         <uib-tab-heading><i class="fa fa-file"></i>日志</uib-tab-heading>

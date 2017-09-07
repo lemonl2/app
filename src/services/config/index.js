@@ -2,6 +2,11 @@ import app from 'App';
 
 app.factory('config', [() => {
   const configObj = {
+    'search:timestampField': {
+      type: 'string',
+      default: '@timestamp',
+      description: '默认的时间戳字段名',
+    },
     'search:maxcount': {
       type: 'number',
       default: 10000,
@@ -29,10 +34,15 @@ app.factory('config', [() => {
       description: '图表默认主题',
     },
 
+    'notifier:timeout': {
+      type: 'number',
+      default: 5000,
+      description: '提示栏默认关闭时间（ms）',
+    },
 
     'timefilter:start': {
       type: 'string',
-      default: 'now-6M',
+      default: 'now-15d',
       description: '默认时间控件开始时间',
     },
     'timefilter:end': {

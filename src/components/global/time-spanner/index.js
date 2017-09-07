@@ -3,17 +3,17 @@ import app from 'App';
 import './index.scss';
 
 class TimeSpannerController {
-  constructor($element) {
+  constructor($scope, $element) {
     this.element = $element[0];
+    this.$scope = $scope;
   }
 
-  $onInit() {
+  draw() {
     const width = this.element.clientWidth;
 
     const data = this.data;
     const timeExtent = this.timeExtent;
     const specifiedTime = this.specifiedTime;
-
     const svg = d3.select(this.element).append('svg')
       .attr('width', width)
       .attr('height', 46);
@@ -35,8 +35,7 @@ class TimeSpannerController {
     //   .attr('fill', '#D4ECFF')
     //   .datum(data)
     //   .attr('d', bgArea);
-
-    svg.append('line')
+    const line = svg.append('line')
       .attr('x1', x(specifiedTime))
       .attr('x2', x(specifiedTime))
       .attr('y1', 0)
@@ -44,6 +43,21 @@ class TimeSpannerController {
       .attr('stroke-width', 4)
       .attr('stroke', 'rgba(74,182,58,0.38')
       .attr('class', 'specified-time-line');
+    // const drag = d3.behavior.drag().origin(() => {
+    //   const t = d3.select(line);
+    //   return {
+    //       x1: t.attr('x1'),
+    //       x2: t.attr('x2'),
+    //       y1: t.attr('y1'),
+    //       y2: t.attr('y2')
+    //   };
+    // }).on("drag", dragmove);
+
+    // function dragmove(d) {
+    //   debugger;
+    // }
+
+
 
     const brush = d3.svg.brush().x(x);
 
@@ -95,6 +109,7 @@ class TimeSpannerController {
     b.selectAll('.resize.w line')
       .attr('transform', 'translate(-4 0)');
 
+
     const formatDate = d3.time.format('%Y.%m.%d');
     const formatTime = d3.time.format('%I:%M %p');
     const brushText = function (bParent) {
@@ -114,6 +129,9 @@ class TimeSpannerController {
 
     brush.on('brush', () => {
       b.call(brushText);
+    });
+
+    brush.on('brushend', (e) => {
       if (this.ngModel) {
         let extent = brush.extent();
         if (+extent[0] === +extent[1]) {
@@ -132,8 +150,12 @@ class TimeSpannerController {
     this.ngModel.$setViewValue(x.domain());
     this.ngModel.$render();
   }
+
+  $onInit() {
+    this.draw();
+  }
 }
-TimeSpannerController.$inject = ['$element'];
+TimeSpannerController.$inject = ['$scope', '$element'];
 
 app.component('timeSpanner', {
   bindings: {

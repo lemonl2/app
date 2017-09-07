@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>1 copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="40"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-copy">
+            <g id="Rectangle-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#DDDDDD" stroke-width="1" x="0.5" y="0.5" width="59" height="39"></rect>
+            </g>
+            <polygon id="Rectangle-3" fill="#71DBD5" points="11.2026687 7 47.8025022 7 42 14 17.2954516 14"></polygon>
+            <polygon id="Rectangle-3-Copy" fill="#B8EDEA" points="17.063687 14 42 14 40.2764043 21 18.6368055 21"></polygon>
+            <polygon id="Rectangle-3-Copy-2" fill="#94E4E0" points="18.8192321 21 40.0483711 21 32.6471117 28 26.5888687 28"></polygon>
+            <polygon id="Rectangle-3-Copy-3" fill="#71DBD5" points="26.759888 28 32.687002 28 30 35"></polygon>
+        </g>
+    </g>
+</svg>

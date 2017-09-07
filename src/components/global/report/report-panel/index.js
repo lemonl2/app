@@ -6,7 +6,7 @@ class ReportPanelController {
   constructor($scope, $state, $rootScope, $timeout) {
     this.app = $rootScope.appInfo;
     this.services = { $scope, $timeout };
-    this.edit = $state.params.edit | 0;
+    this.edit = true;
   }
 
   $onInit() {

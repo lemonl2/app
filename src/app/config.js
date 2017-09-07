@@ -30,6 +30,12 @@ app
   //   };
   // }]);
 }])
+.run(['$transitions', '$rootScope', '$location', ($transitions, $rootScope, $location) => {
+  if ($location.search().embed) {
+    $rootScope.embed = true;
+    document.documentElement.classList.add('embed');
+  }
+}])
 .config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;
 }])

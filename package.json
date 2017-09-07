@@ -36,7 +36,7 @@
     "chunk-manifest-webpack-plugin": "1.1.0",
     "compression-webpack-plugin": "^0.4.0",
     "css-loader": "^0.28.5",
-    "d3": "3",
+    "d3": "^3.5.17",
     "dom4": "^1.8.5",
     "echarts": "^3.7.0",
     "echarts-stat": "^1.1.0",

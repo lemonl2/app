@@ -14,6 +14,7 @@ import 'angular-loading-bar/build/loading-bar.css';
 import './bootstrap';
 
 import './base.scss';
+import './icons.scss';
 import './Dosis.scss';
 import './global.scss';
 
@@ -30,7 +31,6 @@ import 'angular-resizable/src/angular-resizable.css';
 import 'angular-gridster';
 import 'angular-gridster/dist/angular-gridster.css';
 
-import 'angular-scroll';
 require('smoothscroll-polyfill').polyfill();
 
 export default angular.module('app', [
@@ -40,5 +40,4 @@ export default angular.module('app', [
   angularLoadingBar,
   'gridster',
   'angularResizable',
-  'duScroll',
 ]);

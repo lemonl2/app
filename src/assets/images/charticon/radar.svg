@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>雷达图</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="40"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="雷达图">
+            <g id="Rectangle-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#DDDDDD" stroke-width="1" x="0.5" y="0.5" width="59" height="39"></rect>
+            </g>
+            <circle id="Oval" fill="#71DBD5" cx="30" cy="20" r="15"></circle>
+            <polygon id="Polygon-Copy" fill="#94E4E0" points="30 8.11307355 40.9867815 15.9358581 37.7216991 30.1648679 22.5802451 29.3959084 17.600261 15.4153678"></polygon>
+            <polygon id="Polygon" fill="#B8EDEA" points="29.6573956 13 37.8051253 17.0692716 33.8245922 25.1146399 24.5982947 26.991066 23 17.836881"></polygon>
+            <path d="M30,20 L39.5,32.5" id="Line" stroke="#FFFFFF" stroke-width="0.5" opacity="0.404211957" stroke-linecap="square"></path>
+            <path d="M30,20 L44.0705299,14.6243711" id="Line-Copy-2" stroke="#FFFFFF" stroke-width="0.5" opacity="0.404211957" stroke-linecap="square"></path>
+            <path d="M30,20 L30,4.73187584" id="Line-Copy-3" stroke="#FFFFFF" stroke-width="0.5" opacity="0.404211957" stroke-linecap="square"></path>
+            <path d="M15.5276558,14.6004777 L30,20" id="Line-Copy-4" stroke="#FFFFFF" stroke-width="0.5" opacity="0.404211957" stroke-linecap="square"></path>
+            <path d="M30,20 L20.5700523,31.8681635" id="Line-Copy" stroke="#FFFFFF" stroke-width="0.5" opacity="0.404211957" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

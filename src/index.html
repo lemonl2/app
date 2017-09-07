@@ -8,9 +8,9 @@
 </head>
 <body ng-controller="RootController as $ctrl" ng-attr-data-page="{{$ctrl.$state.current.name}}">
   <main-container>
-    <right-header></right-header>
+    <right-header ng-cloak ng-if="!$root.embed"></right-header>
     <right-view>
-      <left-aside ng-cloak></left-aside>
+      <left-aside ng-cloak ng-if="!$root.embed"></left-aside>
       <ui-view></ui-view>
     </right-view>
   </main-container>

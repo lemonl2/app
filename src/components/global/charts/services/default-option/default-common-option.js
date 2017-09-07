@@ -65,6 +65,7 @@ export default function () {
       silent: false,
       stacked: false,
       polar: false,
+      connectNulls: false
     },
   };
 }

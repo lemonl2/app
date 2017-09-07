@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>气泡图</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="40"></rect>
+        <radialGradient cx="50%" cy="27.308916%" fx="50%" fy="27.308916%" r="72.691084%" id="radialGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#71DBD5" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="气泡图">
+            <g id="Rectangle-2">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#DDDDDD" stroke-width="1" x="0.5" y="0.5" width="59" height="39"></rect>
+            </g>
+            <circle id="Oval-2-Copy-20" fill="url(#radialGradient-2)" opacity="0.399966033" cx="10.5" cy="10.5" r="3.5"></circle>
+            <circle id="Oval-2-Copy-21" fill="url(#radialGradient-2)" opacity="0.399966033" cx="16.5" cy="14.5" r="2.5"></circle>
+            <circle id="Oval-2-Copy" fill="url(#radialGradient-2)" opacity="0.663722826" cx="11.5" cy="21.5" r="2.5"></circle>
+            <circle id="Oval-2-Copy-6" fill="url(#radialGradient-2)" opacity="0.663722826" cx="5.5" cy="24.5" r="2.5"></circle>
+            <circle id="Oval-2" fill="url(#radialGradient-2)" cx="8.5" cy="17.5" r="3.5"></circle>
+            <circle id="Oval-2-Copy-2" fill="url(#radialGradient-2)" opacity="0.548686594" cx="20.5" cy="12.5" r="2.5"></circle>
+            <circle id="Oval-2-Copy-15" fill="url(#radialGradient-2)" cx="17.5" cy="10.5" r="2.5"></circle>
+            <circle id="Oval-2-Copy-3" fill="url(#radialGradient-2)" cx="28" cy="8" r="2"></circle>
+            <circle id="Oval-2-Copy-4" fill="url(#radialGradient-2)" cx="35" cy="10" r="2"></circle>
+            <circle id="Oval-2-Copy-13" fill="url(#radialGradient-2)" opacity="0.501188859" cx="13" cy="8" r="2"></circle>
+            <circle id="Oval-2-Copy-5" fill="url(#radialGradient-2)" cx="10.5" cy="12.5" r="1.5"></circle>
+            <circle id="Oval-2-Copy-22" fill="url(#radialGradient-2)" cx="4.5" cy="7.5" r="1.5"></circle>
+            <circle id="Oval-2-Copy-14" fill="url(#radialGradient-2)" opacity="0.470731431" cx="13.5" cy="15.5" r="1.5"></circle>
+            <circle id="Oval-2-Copy-8" fill="url(#radialGradient-2)" cx="6" cy="11" r="1"></circle>
+            <circle id="Oval-2-Copy-16" fill="url(#radialGradient-2)" opacity="0.515115489" cx="48" cy="7" r="1"></circle>
+            <circle id="Oval-2-Copy-18" fill="url(#radialGradient-2)" opacity="0.515115489" cx="43" cy="9" r="1"></circle>
+            <circle id="Oval-2-Copy-11" fill="url(#radialGradient-2)" cx="32" cy="7" r="1"></circle>
+            <circle id="Oval-2-Copy-9" fill="url(#radialGradient-2)" cx="23.5" cy="8.5" r="1"></circle>
+            <circle id="Oval-2-Copy-17" fill="url(#radialGradient-2)" opacity="0.553102355" cx="51.5" cy="5.5" r="1"></circle>
+            <circle id="Oval-2-Copy-10" fill="url(#radialGradient-2)" cx="30.5" cy="10.5" r="1"></circle>
+            <circle id="Oval-2-Copy-12" fill="url(#radialGradient-2)" cx="37.5" cy="7.5" r="1"></circle>
+            <circle id="Oval-2-Copy-19" fill="url(#radialGradient-2)" cx="44.5" cy="6.5" r="1"></circle>
+            <circle id="Oval-2-Copy-7" fill="url(#radialGradient-2)" cx="5.5" cy="31.5" r="1.5"></circle>
+        </g>
+    </g>
+</svg>

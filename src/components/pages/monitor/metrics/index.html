@@ -1,8 +1,8 @@
 <main class="tab-container" id="metric-container">
   <tip-menu active-section="$ctrl.activeSection" x-items="$ctrl.items" scroll-container="metric-container"></tip-menu>
   <section>
-    <metric-system id="metric-system" class="inpage-anchor"></metric-system>
-    <metric-db id="metric-db" class="inpage-anchor"></metric-db>
+    <metric-system id="metric-system" class="inpage-anchor" x-timefilter="$ctrl.timefilter" x-edit="$ctrl.edit"></metric-system>
+    <metric-db id="metric-db" class="inpage-anchor" x-timefilter="$ctrl.timefilter" x-edit="$ctrl.edit"></metric-db>
     <metric-middleware id="metric-middleware" class="inpage-anchor"></metric-middleware>
     <metric-network id="metric-network" class="inpage-anchor"></metric-network>
     <metric-storage id="metric-storage" class="inpage-anchor"></metric-storage>
