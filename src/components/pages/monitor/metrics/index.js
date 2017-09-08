@@ -12,7 +12,7 @@ class MetricsController {
       {title: '网络', name: 'metric-network'},
       {title: '存储', name: 'metric-storage'},
     ];
-    this.activeSection = { name: "metric-system" };
+    this.activeSection = { name: 'metric-system' };
 
     this.services = {$scope, $timeout};
   }

@@ -11,7 +11,7 @@ class SettingController {
       {title: '数据库', name: 'setting-db'},
       {title: '中间件', name: 'setting-middleware'},
     ];
-    this.activeSection = { name: "setting-composite" };
+    this.activeSection = { name: 'setting-composite' };
   }
 }
 

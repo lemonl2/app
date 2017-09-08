@@ -98,16 +98,6 @@ module.exports = {
       disabledDotRule: true
     },
     proxy: {
-      '/api/itoa': {
-        target: 'http://192.168.31.136:18899',
-        logLevel: 'debug',
-        pathRewrite: {
-          '^/api': ''
-        },
-        onProxyRes(proxyRes) {
-          proxyRes.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
-        }
-      },
       '/api/spl': {
         target: 'http://192.168.31.135:8899',
         logLevel: 'debug',
